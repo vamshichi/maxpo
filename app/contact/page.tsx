@@ -15,9 +15,9 @@ export default function AboutPage() {
       <div className="grid gap-8 md:grid-cols-2">
         <div>
           <p className="mb-6 text-lg">
-            We'd love to hear from you! Whether you have a question about our services, 
-            need support, or just want to say hello, don't hesitate to reach out. 
-            Fill out the form below, and we'll get back to you as soon as possible.
+            We&apos;d love to hear from you! Whether you have a question about our services, 
+            need support, or just want to say hello, don&apos;t hesitate to reach out. 
+            Fill out the form below, and we&apos;ll get back to you as soon as possible.
           </p>
           </div>
         </div>

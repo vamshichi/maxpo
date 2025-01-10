@@ -28,7 +28,7 @@ export default function MissionVisionSection() {
             </div>
             <h3 className="text-xl font-semibold text-green-700 mb-4">Vision</h3>
             <p className="text-center text-gray-600 pt-5">
-              To become the world's most trusted platform for education, collaboration, and progress in the real estate industry.
+              To become the world&apos;s most trusted platform for education, collaboration, and progress in the real estate industry.
             </p>
           </div>
 
