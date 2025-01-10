@@ -5,12 +5,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #3b82f6;
+  --secondary: #10b981;
+  --accent: #f59e0b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #60a5fa;
+    --secondary: #34d399;
+    --accent: #fbbf24;
   }
 }
 
@@ -18,4 +24,62 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+/* Custom utility classes */
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+/* Responsive font sizes */
+@layer base {
+  html {
+    font-size: 16px;
+  }
+
+  @screen sm {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  @screen lg {
+    html {
+      font-size: 20px;
+    }
+  }
 }
