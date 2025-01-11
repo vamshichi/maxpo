@@ -1,7 +1,5 @@
-'use client';
-
 import React, { useState, useEffect } from "react";
-import { CalendarDays, MapPin, Clock, ExternalLink } from 'lucide-react';
+import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import Countdown from "react-countdown";
@@ -37,72 +35,72 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
     minutes: number;
     seconds: number;
   }) => (
-    <div className="flex justify-around items-center bg-gradient-to-r from-indigo-500 to-blue-950 text-white p-3 rounded-lg shadow-lg">
-      {[
-        { value: days, label: "Days" },
-        { value: hours, label: "Hours" },
-        { value: minutes, label: "Minutes" },
-        { value: seconds, label: "Seconds" },
-      ].map(({ value, label }) => (
-        <div key={label} className="text-center">
-          <div className="text-2xl font-bold">{value}</div>
-          <div className="text-sm uppercase">{label}</div>
-        </div>
-      ))}
+    <div className="flex justify-between text-center mb-6">
+      <div className="bg-blue-100 rounded p-2 md:p-3">
+        <div className="text-2xl md:text-3xl font-bold text-blue-600">{days}</div>
+        <div className="text-sm md:text-base text-blue-600">Days</div>
+      </div>
+      <div className="bg-blue-100 rounded p-2 md:p-3">
+        <div className="text-2xl md:text-3xl font-bold text-blue-600">{hours}</div>
+        <div className="text-sm md:text-base text-blue-600">Hours</div>
+      </div>
+      <div className="bg-blue-100 rounded p-2 md:p-3">
+        <div className="text-2xl md:text-3xl font-bold text-blue-600">{minutes}</div>
+        <div className="text-sm md:text-base text-blue-600">Minutes</div>
+      </div>
+      <div className="bg-blue-100 rounded p-2 md:p-3">
+        <div className="text-2xl md:text-3xl font-bold text-blue-600">{seconds}</div>
+        <div className="text-sm md:text-base text-blue-600">Seconds</div>
+      </div>
     </div>
   );
 
   return (
-    <div className="w-96 bg-gradient-to-b from-white to-gray-100 rounded-xl shadow-xl overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl flex flex-col">
-      <Link href={event.link} className="relative h-56 group">
-        <Image
-          src={event.image}
-          alt={event.name}
-          layout="fill"
-          className=" group-hover:scale-110 transition-transform duration-300"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        <div className="absolute bottom-4 left-4 text-white">
-          <h3 className="text-2xl font-bold">{event.name}</h3>
-          <div className="text-sm flex items-center space-x-2">
-            <MapPin className="w-4 h-4" />
-            <span>{event.location}</span>
-          </div>
-        </div>
-      </Link>
-      <div className="p-5 flex flex-col space-y-4">
-        <div className="flex items-center space-x-2 text-gray-600">
-          <CalendarDays className="w-5 h-5 text-blue-600" />
-          <span>{event.date}</span>
-        </div>
-        <div className="flex items-center space-x-2 text-gray-600">
-          <Clock className="w-5 h-5 text-blue-600" />
-          <span>{new Date(event.eventDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-        </div>
+    <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+      <div className="relative h-64 w-full mb-4 sm:mb-6 md:mb-8">
+        <Link href={event.link}>
+          <Image src={event.image} alt={event.name} layout="fill"  />
+        </Link>
+      </div>
+      <div className="p-4 sm:p-6 md:p-8">
+        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2 md:mb-3">
+          {event.name}
+        </h3>
+        <p className="text-sm md:text-lg text-gray-600 mb-2 md:mb-4 flex items-center">
+          <FaMapMarkerAlt className="mr-2" />
+          {event.location}
+        </p>
+        <p className="text-sm md:text-lg text-gray-600 mb-2 md:mb-4 flex items-center">
+          <FaCalendarAlt className="mr-2" />
+          {event.date}
+        </p>
         {isClient ? (
           <Countdown date={event.eventDate} renderer={CountdownRenderer} />
         ) : (
           <CountdownRenderer days={0} hours={0} minutes={0} seconds={0} />
         )}
-        <a
-          href="#register"
-          className="block w-full bg-gradient-to-r from-yellow-500 to-orange-600 text-white text-center font-semibold py-3 rounded-lg hover:from-yellow-600 hover:to-orange-700 transition duration-300"
-        >
-          Register Now
-        </a>
-        <div className="flex justify-between text-blue-600 text-sm">
-          {event.floorPlanUrl && (
-            <Link href={event.floorPlanUrl} className="flex items-center hover:text-blue-800">
-              <ExternalLink className="w-4 h-4 mr-1" />
-              Floor Plan
-            </Link>
-          )}
-          {event.brochureUrl && (
-            <Link href={event.brochureUrl} className="flex items-center hover:text-blue-800">
-              <ExternalLink className="w-4 h-4 mr-1" />
-              Brochure
-            </Link>
-          )}
+        <div className="flex justify-between items-center">
+          <a
+            href="#register"
+            className="px-4 py-2 md:px-6 md:py-3 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition duration-300"
+          >
+            Register Now
+          </a>
+          <div className="space-x-4 text-sm md:text-lg">
+            {event.floorPlanUrl && (
+              <a href={event.floorPlanUrl} className="text-blue-600 hover:underline">
+                Floor Plan
+              </a>
+            )}
+            {event.floorPlanUrl && event.brochureUrl && (
+              <span className="text-gray-400">||</span>
+            )}
+            {event.brochureUrl && (
+              <a href={event.brochureUrl} className="text-blue-600 hover:underline">
+                Brochure
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>
