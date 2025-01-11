@@ -1,6 +1,9 @@
+'use client'
+
 import React from 'react';
 import Image from 'next/image';
-import MotionWrapper from '@/app/components/MotionWrapper'; // Import the wrapper
+import { motion } from 'framer-motion';
+import { Linkedin, Mail, ChevronRight } from 'lucide-react';
 
 import Anu from '@/app/images/team/anu.jpg';
 import Inayat from '@/app/images/team/inayat.png';
@@ -16,30 +19,65 @@ const teamData = [
 
 const TeamMembers = () => {
   return (
-    <section className="bg-white text-black py-40">
-      <div className="max-w-7xl mx-auto text-center">
-        <MotionWrapper>
-          <h2 className="text-4xl font-bold text-navy-blue mb-12">
-            We Have Professional & Expert Management
+    <section className="bg-gradient-to-b from-gray-50 to-white py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+            Meet Our Expert Team
           </h2>
-        </MotionWrapper>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our professional management team brings years of experience and expertise to drive success in every project.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamData.map((member, index) => (
-            <MotionWrapper key={index} delay={index * 0.8}>
-              <div className="bg-light-gray p-8 rounded-lg shadow-lg">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  className="w-32 h-32 object-cover rounded-full mx-auto mb-6"
-                />
-                <h3 className="text-navy-blue text-2xl font-semibold mb-3">{member.name}</h3>
-                <p className="text-dark-gray text-sm mb-4">{member.role}</p>
-                <button className="bg-navy-blue text-bright-green py-2 px-6 rounded-lg hover:bg-bright-green hover:text-navy-blue transition">
-                  Learn More
-                </button>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="relative h-64 w-full mb-4">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white text-2xl font-bold mb-1">{member.name}</h3>
+                    <p className="text-gray-200 text-sm">{member.role}</p>
+                  </div>
+                </div>
+                <div className="px-6 pb-6">
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="flex space-x-2">
+                      <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                      <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                        <Mail className="w-5 h-5" />
+                      </a>
+                    </div>
+                    {/* <button className="text-blue-600 hover:text-blue-800 transition-colors flex items-center text-sm font-medium">
+                      Learn More <ChevronRight className="w-4 h-4 ml-1" />
+                    </button> */}
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Experienced professional with a passion for driving innovation and growth.
+                  </p>
+                </div>
               </div>
-            </MotionWrapper>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -48,3 +86,4 @@ const TeamMembers = () => {
 };
 
 export default TeamMembers;
+
