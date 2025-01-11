@@ -47,7 +47,7 @@ const MultipleEventCountdown: React.FC = () => {
         </motion.h2>
         <div className="overflow-x-auto pb-6">
           <div className="flex space-x-6">
-            {events.map((event, index) => (
+            {events.map((event) => (
               <InteractiveEventShowcase key={event.id} event={event} />
             ))}
           </div>

@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Linkedin, Mail, ChevronRight } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 import Anu from '@/app/images/team/anu.jpg';
 import Inayat from '@/app/images/team/inayat.png';
@@ -64,9 +64,9 @@ const TeamMembers = () => {
                       <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
                         <Linkedin className="w-5 h-5" />
                       </a>
-                      <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                      {/* <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
                         <Mail className="w-5 h-5" />
-                      </a>
+                      </a> */}
                     </div>
                     {/* <button className="text-blue-600 hover:text-blue-800 transition-colors flex items-center text-sm font-medium">
                       Learn More <ChevronRight className="w-4 h-4 ml-1" />
