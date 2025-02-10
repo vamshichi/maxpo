@@ -47,13 +47,13 @@ const Header: React.FC = () => {
         </nav>
 
         {/* CTA Buttons */}
-        <div className="hidden md:flex items-center space-x-6">
+        {/* <div className="hidden md:flex items-center space-x-6">
           <Link href="/register">
             <p className="bg-yellow-500 text-black py-2 px-6 rounded-full text-lg font-semibold transition transform hover:bg-light-green hover:scale-105">
               REGISTER NOW
             </p>
           </Link>
-        </div>
+        </div> */}
 
         {/* Hamburger Menu for Mobile */}
         <button

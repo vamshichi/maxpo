@@ -7,7 +7,7 @@ import MultipleEventCountdown from "../components/homepage/MultipleEventCountdow
 export default function AboutPage() {
   return (
       <div>
-        <MultipleEventCountdown />
+        {/* <MultipleEventCountdown /> */}
        <PastEvents />
       </div>
   )

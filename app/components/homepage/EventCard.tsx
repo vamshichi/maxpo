@@ -59,7 +59,9 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
     <div className="bg-white rounded-lg shadow-xl overflow-hidden">
       <div className="relative h-64 w-full mb-4 sm:mb-6 md:mb-8">
         <Link href={event.link}>
-          <Image src={event.image} alt={event.name} layout="fill"  />
+          <Image src={event.image} alt={event.name} 
+          layout="fill"
+            />
         </Link>
       </div>
       <div className="p-4 sm:p-6 md:p-8">

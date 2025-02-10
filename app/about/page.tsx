@@ -6,7 +6,7 @@ import AboutSection from '../components/about/AboutSection'
 import MissionVisionSection from '../components/about/MissionVisionSection'
 
 import CTASection from '../components/about/CTASection'
-import TeamMembers from '../components/homepage/TeamMembers'
+// import TeamMembers from '../components/homepage/TeamMembers'
 import ServicesSection from '../components/about/ServicesSection'
 
 export default function AboutPage() {
@@ -16,7 +16,7 @@ export default function AboutPage() {
         <AboutSection />
         <ServicesSection />
         <MissionVisionSection />
-        <TeamMembers />
+        {/* <TeamMembers /> */}
         <CTASection />
       </div>
   )

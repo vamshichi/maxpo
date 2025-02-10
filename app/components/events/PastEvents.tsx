@@ -1,4 +1,28 @@
 import Image from 'next/image';
+import S1 from '@/app/images/events/Singapore 2024/1.jpeg'
+import S2 from '@/app/images/events/Singapore 2024/2.jpeg'
+import S3 from '@/app/images/events/Singapore 2024/3.jpeg'
+import S4 from '@/app/images/events/Singapore 2024/4.jpeg'
+
+import D1 from '@/app/images/events/Dubai June 2024/1.jpg'
+import D2 from '@/app/images/events/Dubai June 2024/2.jpg'
+import D3 from '@/app/images/events/Dubai June 2024/3.jpg'
+import D4 from '@/app/images/events/Dubai June 2024/4.jpg'
+
+import G1 from '@/app/images/events/Gmec 2024/1.jpg'
+import G2 from '@/app/images/events/Gmec 2024/2.jpg'
+import G3 from '@/app/images/events/Gmec 2024/3.jpg'
+import G4 from '@/app/images/events/Gmec 2024/4.jpg'
+
+import Sc1 from '@/app/images/events/santa-clara/WhatsApp Image 2024-04-29 at 1.36.28 AM (1).jpeg'
+import Sc2 from '@/app/images/events/santa-clara/WhatsApp Image 2024-04-29 at 1.36.28 AM.jpeg'
+import Sc3 from '@/app/images/events/santa-clara/WhatsApp Image 2024-04-29 at 1.36.29 AM (1).jpeg'
+import Sc4 from '@/app/images/events/santa-clara/WhatsApp Image 2024-04-29 at 1.36.29 AM (2).jpeg'
+
+import F1 from '@/app/images/events/Frisco/WhatsApp Image 2024-04-22 at 6.13.47 PM (1).jpeg'
+import F2 from '@/app/images/events/Frisco/WhatsApp Image 2024-04-22 at 6.13.47 PM (2).jpeg'
+import F3 from '@/app/images/events/Frisco/WhatsApp Image 2024-04-22 at 6.13.47 PM (3).jpeg'
+import F4 from '@/app/images/events/Frisco/WhatsApp Image 2024-04-22 at 6.13.47 PM (4).jpeg'
 
 const events = [
   {
@@ -6,10 +30,10 @@ const events = [
     description:
       "India's Leading B2B Property Exhibition, India Property Show 2024, was held on August 17th and 18th in Singapore. The event was a fabulous success, featuring not only the latest in real estate developments but also a series of cultural activities.",
     images: [
-      '/images/event1_1.jpg',
-      '/images/event1_2.jpg',
-      '/images/event1_3.jpg',
-      '/images/event1_4.jpg',
+      S1,
+      S2,
+      S3,
+      S4,
     ],
   },
   {
@@ -17,10 +41,10 @@ const events = [
     description:
       "India's Leading B2B Property Exhibition, India Property Show 2024, was held on June 8th and 9th at the Ritz-Carlton in Dubai. The event showcased the latest in real estate developments and innovative solutions, connecting key industry professionals.",
     images: [
-      '/images/event2_1.jpg',
-      '/images/event2_2.jpg',
-      '/images/event2_3.jpg',
-      '/images/event2_4.jpg',
+       D1,
+      D2,
+      D3,
+      D4,
     ],
   },
   {
@@ -28,10 +52,10 @@ const events = [
     description:
       "India's Leading B2B Hospital Needs Exhibition, GMEC 2024, held from May 17-19 at Palace Grounds, Bengaluru. Latest in medical equipment and innovative solutions, and connect with key industry professionals.",
     images: [
-      '/images/event3_1.jpg',
-      '/images/event3_2.jpg',
-      '/images/event3_3.jpg',
-      '/images/event3_4.jpg',
+      G1,
+      G2,
+      G3,
+      G4,
     ],
   },
   {
@@ -39,10 +63,11 @@ const events = [
     description:
       "This event was a huge success in Santa Clara, US, attracting builders, investors, and visitors from all over. With rave reviews from builders and valuable insights for visitors, it was truly a remarkable event that left a lasting impact on the real estate industry.",
     images: [
-      '/images/event4_1.jpg',
-      '/images/event4_2.jpg',
-      '/images/event4_3.jpg',
-      '/images/event4_4.jpg',
+      Sc1,
+      Sc2,
+      Sc3,
+      Sc4,
+
     ],
   },
   {
@@ -50,10 +75,11 @@ const events = [
     description:
       "The India Property Show held in Frisco on 20th-21st April 2024 at Hyatt Regency was a resounding success. It attracted builders, investors, and visitors from across the region. With rave reviews from builders and valuable insights for visitors, the event made a lasting impact on the real estate industry.",
     images: [
-      '/images/event5_1.jpg',
-      '/images/event5_2.jpg',
-      '/images/event5_3.jpg',
-      '/images/event5_4.jpg',
+      F1,
+      F2,
+      F3,
+      F4,
+
     ],
   },
   // Add more events as necessary
@@ -77,7 +103,7 @@ export default function PastEvents() {
                       src={image}
                       alt={`Event ${index + 1} Image ${idx + 1}`}
                       layout="fill"
-                      objectFit="cover"
+                      // objectFit="cover"
                       className="rounded-lg"
                     />
                   </div>

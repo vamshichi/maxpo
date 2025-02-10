@@ -48,7 +48,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative h-[60vh] overflow-hidden bg-gray-900">
+    <section className="relative h-[60vh] overflow-hidden bg-blue-900">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentSlide}

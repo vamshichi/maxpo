@@ -56,7 +56,7 @@ const AboutUsHero: React.FC = () => {
               <p className="text-xl md:text-2xl mb-8 max-w-2xl">
                 Discover our mission to revolutionize the property industry through innovation, sustainability, and community-driven solutions.
               </p>
-              <div className="flex flex-col sm:flex-row items-start gap-4">
+              {/* <div className="flex flex-col sm:flex-row items-start gap-4">
                 <motion.a
                   href="#our-story"
                   whileHover={{ scale: 1.05 }}
@@ -73,7 +73,7 @@ const AboutUsHero: React.FC = () => {
                 >
                   Our Values
                 </motion.a>
-              </div>
+              </div> */}
             </motion.div>
           )}
         </AnimatePresence>

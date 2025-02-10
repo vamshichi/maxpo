@@ -1,4 +1,7 @@
+'use client'
+
 import React from "react";
+import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
@@ -96,13 +99,11 @@ const Footer: React.FC = () => {
           <h3 className="text-3xl font-bold text-white mb-6">Quick Links</h3>
           <div className="flex flex-wrap justify-center gap-6">
             {navigationLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="text-gray-400 hover:text-yellow-500 transition duration-300 hover:scale-110 inline-block"
-              >
-                {link.label}
-              </a>
+              <Link key={index} href={link.href} passHref>
+                <p className="text-gray-400 hover:text-yellow-500 transition duration-300 hover:scale-110 inline-block">
+                  {link.label}
+                </p>
+              </Link>
             ))}
           </div>
         </div>
@@ -126,7 +127,7 @@ const Footer: React.FC = () => {
         <div className="text-center text-sm text-gray-500">
           <p>© {new Date().getFullYear()} Maxpo Exhibitions Private Limited. All Rights Reserved.</p>
           <p className="mt-2">
-            <MdLocationOn className="inline-block mr-1" /> 
+            <MdLocationOn className="inline-block mr-1" />
             123 Exhibition Street, Dubai, UAE
           </p>
         </div>
@@ -136,4 +137,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-

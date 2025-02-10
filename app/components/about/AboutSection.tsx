@@ -1,15 +1,21 @@
 'use client'
 
+import MotionWrapper from "../MotionWrapper";
+
 export default function AboutSection() {
   return (
     <section className="bg-gradient-to-r from-gray-50 to-gray-200 py-20 px-6 md:px-20 lg:px-40">
+      <MotionWrapper delay={0.8}>
       <div className="text-center mb-12">
         <h2 className="text-4xl font-extrabold text-gray-800">About Us</h2>
         <p className="mt-4 text-lg text-gray-600">
           Discover what makes us a trusted name in global exhibitions and events.
         </p>
       </div>
+      </MotionWrapper>
+      
       <div className="grid md:grid-cols-2 gap-12 items-center">
+      <MotionWrapper delay={0.5}>
         {/* Content Section */}
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-blue-700">Your Partner in Excellence</h3>
@@ -20,7 +26,9 @@ export default function AboutSection() {
             and unlock new opportunities in diverse industries.
           </p>
         </div>
+        </MotionWrapper>
         {/* Expertise Section */}
+        <MotionWrapper delay={0.5}>
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-green-700">Our Expertise</h3>
           <ul className="space-y-3">
@@ -61,6 +69,7 @@ export default function AboutSection() {
             managed events that leave a lasting impression worldwide.
           </p>
         </div>
+        </MotionWrapper>
       </div>
     </section>
   );
