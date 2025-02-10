@@ -10,7 +10,7 @@ export default function ContactDetails({ contactInfo }: { contactInfo: ContactIn
   return (
     <section className="w-full max-w-5xl mx-auto p-8 py-40">
       <h2 className="text-4xl font-extrabold text-black mb-12 leading-tight">
-        Reach Out <span className="block text-gray-500 text-5xl mt-2">We're Here for You</span>
+        Reach Out <span className="block text-gray-500 text-5xl mt-2">We&apos;re Here for You</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <ContactItem

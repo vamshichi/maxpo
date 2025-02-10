@@ -26,8 +26,7 @@ function BrandItem({ brand, index }: { brand: Brand; index: number }) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <MotionWrapper key={index} delay={index * 0.7} >
-      
+    <MotionWrapper key={index} delay={index * 0.7}>
       <Link 
         href={brand.website}
         className="group block relative overflow-hidden"
@@ -37,10 +36,11 @@ function BrandItem({ brand, index }: { brand: Brand; index: number }) {
         rel="noopener noreferrer"
       >
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-white to-gray-100 transform group-hover:scale-105 transition-transform duration-300"
+          className="absolute inset-0 bg-gradient-to-br from-white to-gray-100 transform transition-transform duration-300"
           style={{ 
             borderLeft: `8px solid ${brand.color}`,
-            boxShadow: `0 4px 6px -1px ${brand.color}20, 0 2px 4px -1px ${brand.color}30`
+            boxShadow: `0 4px 6px -1px ${brand.color}20, 0 2px 4px -1px ${brand.color}30`,
+            transform: isHovered ? 'scale(1.05)' : 'scale(1)'
           }}
         />
         <div className="relative p-6 flex items-center">
@@ -56,11 +56,14 @@ function BrandItem({ brand, index }: { brand: Brand; index: number }) {
           <div>
             <h3 className="text-xl font-semibold mb-2" style={{ color: brand.color }}>{brand.name}</h3>
             <p className="text-gray-600 mb-4">{brand.description}</p>
+            <span className={`${isHovered ? "text-blue-500" : "text-gray-600"} transition-colors`}>
               Visit Website →
+            </span>
           </div>
         </div>
       </Link>
     </MotionWrapper>
   )
 }
+
 
